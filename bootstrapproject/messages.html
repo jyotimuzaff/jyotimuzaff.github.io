@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Messages received</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    
+        <link href="css/messages.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                Messages
+                <div id="page-actions">
+                    <div id="logged-in-user-email"></div>
+                    <input class="btn btn-sm btn-primary" id="btn-logout" type="button" value="Sign out" />
+                </div>
+            </h1>
+            <hr/>
+            <table class="table table-striped table-bordered" id="tbl-messages">
+                <thead>
+                    <tr>
+                        <th>Recevied</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="modal fade" id="dialog-reply">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Compose reply</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" id="frm-reply">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="to">To</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" disabled type="text" name="to" id="to" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="subject">Subject</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" name="subject" id="subject" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="text">Reply</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" type="text" name="text" id="text" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <input class="btn btn-default" type="reset" value="Reset" id="btn-frm-reset" />
+                                    <input class="btn btn-primary" type="submit" value="Send reply" id="btn-frm-submit" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <script src="js/auth.js"></script>
+        <script src="js/messages.js"></script>
+        <script src="js/logout.js"></script>
+    </body>
+</html>
